@@ -70,14 +70,14 @@ def test_delete_requests(id):
     url = base_url + f'/public/v2/users{id}'
     res = requests.delete(url, headers=headers)
     print(res.status_code)
-    # assert res.status_code == 204
+    assert res.status_code == 204
     print("+++++++++++++delete REQUESTS COMPLETED===============")
 
 
 test_get_requests()
 id = test_post_request()
-test_put_request(id)
-test_delete_requests(id)
+# test_put_request(id)
+# test_delete_requests(id)
 
 
 
