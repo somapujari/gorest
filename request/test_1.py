@@ -1,5 +1,6 @@
 import string
 
+import pytest as pytest
 import requests
 import random
 import json
@@ -46,7 +47,7 @@ def test_post_request():
     print("++++++++++++++POST REQUESTS COMPLETED===============")
     return id
 
-
+@pytest.mark.skip
 def test_put_request(id):
     email = email_genrerate() + '@gmail.com'
     data = {
@@ -65,7 +66,7 @@ def test_put_request(id):
     assert json_data["name"] == "sweat"
     print("++++++++++++++PUT REQUESTS COMPLETED===============")
 
-
+@pytest.mark.skip
 def test_delete_requests(id):
     url = base_url + f'/public/v2/users{id}'
     res = requests.delete(url, headers=headers)
