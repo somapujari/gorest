@@ -12,7 +12,7 @@ def email_genrerate(size=8, char=string.ascii_lowercase+string.digits):
     return "".join(random.choices(char, k=size))
 
 
-def get_requests():
+def test_get_requests():
     url = base_url + '/public/v2/users'
 
     response = requests.get(url, headers=headers)
@@ -25,8 +25,8 @@ def get_requests():
     print('++++++++++++++++get_request compleated =======================')
 
 
-def post_request():
-    email = email_genrerate()+ '@gmail.com'
+def test_post_request():
+    email = email_genrerate() + '@gmail.com'
     data = {
 
         "name": "vish  Gandhi",
@@ -74,8 +74,8 @@ def delete_requests(id):
     print("+++++++++++++delete REQUESTS COMPLETED===============")
 
 
-get_requests()
-id = post_request()
+test_get_requests()
+id = test_post_request()
 put_request(id)
 delete_requests(id)
 
