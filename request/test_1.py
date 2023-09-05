@@ -47,7 +47,7 @@ def test_post_request():
     return id
 
 
-def put_request(id):
+def test_put_request(id):
     email = email_genrerate() + '@gmail.com'
     data = {
         "name": "sweat",
@@ -66,7 +66,7 @@ def put_request(id):
     print("++++++++++++++PUT REQUESTS COMPLETED===============")
 
 
-def delete_requests(id):
+def test_delete_requests(id):
     url = base_url + f'/public/v2/users{id}'
     res = requests.delete(url, headers=headers)
     print(res.status_code)
@@ -76,8 +76,8 @@ def delete_requests(id):
 
 test_get_requests()
 id = test_post_request()
-put_request(id)
-delete_requests(id)
+test_put_request(id)
+test_delete_requests(id)
 
 
 
